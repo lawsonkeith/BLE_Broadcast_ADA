@@ -36,9 +36,16 @@ void setup(void)
   while(!Serial); // Leonardo/Micro should wait for serial init
   Serial.println(F("Adafruit Bluefruit Low Energy nRF8001 Print echo demo"));
 
-  // BTLEserial.setDeviceName("NEWNAME"); /* 7 characters max! */
+ // BTLEserial.setDeviceName("NEWNAME"); /* 7 characters max! */
+  pinMode(13, OUTPUT);
+  for(i=0;i<25;i++){
+    digitalWrite(13, i % 2);   // turn the LED on (HIGH is the voltage level)
+    delay(70);  
+  }
+  
 
   BTLEserial.begin();
+  delay(1000);   
 }
 
 /**************************************************************************/
